@@ -1,0 +1,31 @@
+{
+  "name": "@betafcc/is",
+  "version": "1.0.0",
+  "description": "Runtime type-check JS utility",
+  "main": "src/index.js",
+  "scripts": {
+    "test" : "mocha",
+    "start": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "chai": "4.0.2",
+    "jsverify": "0.8.2",
+    "mocha": "3.4.2"
+  },
+  "dependencies": {
+    "lodash.isequal": "4.5.0",
+    "lodash.isplainobject": "4.0.6",
+    "lodash.zipwith": "4.2.0"
+  },
+  "keywords": ["type", "utility", "check"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betafcc/isJS.git"
+  },
+  "author": "Beta Faccion <betafcc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/betafcc/isJS/issues"
+  },
+  "homepage": "https://github.com/betafcc/isJS#readme"
+}
