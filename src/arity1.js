@@ -1,4 +1,5 @@
-const plainObject = require('lodash.isplainobject');
+const isFunction = require('lodash.isfunction');
+const isPlainObject = require('lodash.isplainobject');
 
 
 const A1 = {
@@ -19,7 +20,8 @@ const A1 = {
   falsy   : arg => !arg,
 
 
-  plainObject,
+  plainObject: isPlainObject,
+  function: isFunction,
   object: arg => (arg !== null && typeof arg === 'object'),
   dict: arg => A1.plainObject(arg),
 

@@ -42,6 +42,7 @@ is.map         :: Any -> Boolean
 is.set         :: Any -> Boolean
 is.iterator    :: Any -> Boolean
 is.iterable    :: Any -> Boolean
+is.function    :: Any -> Boolean
 is.object      :: Any -> Boolean // any object except null
 is.plainObject :: Any -> Boolean // mainly used for object literals
 is.dict        :: Any -> Boolean // same as above
