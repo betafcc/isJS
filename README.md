@@ -38,15 +38,14 @@ is.string      :: Any -> Boolean
 is.array       :: Any -> Boolean
 is.truthy      :: Any -> Boolean
 is.falsy       :: Any -> Boolean
-is.plainObject :: Any -> Boolean
-is.object      :: Any -> Boolean
-is.dict        :: Any -> Boolean
-is.nullable    :: Any -> Boolean
-    // true for null or undefined or NaN
 is.map         :: Any -> Boolean
 is.set         :: Any -> Boolean
 is.iterator    :: Any -> Boolean
 is.iterable    :: Any -> Boolean
+is.object      :: Any -> Boolean // any object except null
+is.plainObject :: Any -> Boolean // mainly used for object literals
+is.dict        :: Any -> Boolean // same as above
+is.nullable    :: Any -> Boolean // true for null or undefined or NaN
 
 
 is.in :: Iterable -> Any -> boolean
