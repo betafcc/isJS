@@ -39,6 +39,7 @@ const A1 = {
 
   iterator: arg => (A1.nullable(arg)) ? false : !!arg.next,
   iterable: arg => (A1.nullable(arg)) ? false : !!arg[Symbol.iterator],
+  promise : arg => (A1.nullable(arg)) ? false : (arg.constructor === Promise),
 };
 
 

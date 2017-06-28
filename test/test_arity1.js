@@ -43,15 +43,20 @@ const positiveGens = {
   ],
 
   'set'         : [
-    mapBless (arr => new Set(arr))
+    mapBless ( arr => new Set(arr) )
              ( jsc.array() )
   ],
 
   'iterator'    : [
-    mapBless (({value: arg}) => arg[Symbol.iterator]())
+    mapBless ( ({value: arg}) => arg[Symbol.iterator]() )
              ( jsc.sum([jsc.string, jsc.array]) )
   ],
   'iterable'    : [jsc.string, jsc.array],
+
+  'promise'     : [
+    mapBless ( (arg) => Promise.resolve(arg) )
+             ( jsc.json )
+  ],
 };
 
 
@@ -77,6 +82,8 @@ const negativeGens = {
 
   'iterator'    : [nullable, jsc.json],
   'iterable'    : [nullable, jsc.number, jsc.dict, jsc.bool],
+
+  'promise'     : [jsc.json],
 };
 
 
