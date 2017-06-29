@@ -30,14 +30,19 @@ Functions
 ```js
 is.not : Contains negated versions of each below
 
+Arity 1:
 is.boolean     :: Any -> Boolean
 is.number      :: Any -> Boolean
 is.integer     :: Any -> Boolean
 is.float       :: Any -> Boolean
+is.finite      :: Any -> Boolean
 is.string      :: Any -> Boolean
 is.array       :: Any -> Boolean
 is.truthy      :: Any -> Boolean
 is.falsy       :: Any -> Boolean
+is.null        :: Any -> Boolean
+is.nan         :: Any -> Boolean
+is.undefined   :: Any -> Boolean
 is.map         :: Any -> Boolean
 is.set         :: Any -> Boolean
 is.iterator    :: Any -> Boolean
@@ -50,6 +55,7 @@ is.dict        :: Any -> Boolean // same as above
 is.nullable    :: Any -> Boolean // true for null or undefined or NaN
 
 
+Arity 2:
 is.in :: Iterable -> Any -> boolean
     is.in([1, 2, 3])(2) -> true
     is.in([1, 2, 3])('2') -> false

@@ -3,11 +3,15 @@ const isPlainObject = require('lodash.isplainobject');
 
 
 const A1 = {
-  boolean: arg => ((arg === false) || (arg === true)),
-  number: arg => (Number(arg) === arg),
-  integer: Number.isInteger,
-  float : arg => (A1.number(arg) && (arg % 1 !== 0)),
-  string: arg => (
+  boolean : arg => ((arg === false) || (arg === true)),
+  number  : arg => (Number(arg) === arg),
+  integer : arg => Number.isInteger(arg),
+
+  nan     : arg => Number.isNaN(arg),
+  finite  : arg => Number.isFinite(arg),
+
+  float   : arg => (A1.number(arg) && (arg % 1 !== 0)),
+  string  : arg => (
     (typeof arg === 'string')
     || (arg instanceof String)
   ),
@@ -27,10 +31,20 @@ const A1 = {
 
 
   nullable: arg => (
-    (arg === undefined)
-    || (arg === null)
-    || Number.isNaN(arg)
+    A1.undefined(arg)
+    || A1.null(arg)
+    || A1.nan(arg)
   ),
+
+  null    : arg => (arg === null),
+
+  undefined: arg => (arg === undefined),
+
+  // Unreliable on currying
+  // strictUndefined: (...args) => (
+  //   (args.length === 0) ? false :
+  //   A1.undefined(args[0])
+  // ),
 
 
   map: arg => (A1.nullable(arg)) ? false : (arg.constructor === Map),
