@@ -12,6 +12,17 @@ const A2 = {
     arg.every(el => test(el)
   ),
 
+  iterableOf: test => arg => {
+    if (!A1.iterable(arg))
+      return false;
+
+    for (const el of arg)
+      if (!test(el))
+        return false;
+
+    return true;
+  },
+
   tupleOf: tests => arg => (
     (!A1.array(arg))              ? false :
     (tests.length !== arg.length) ? false :
